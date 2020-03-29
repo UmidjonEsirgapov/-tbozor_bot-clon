@@ -18,5 +18,19 @@ bot.onText(/\/start/, function(msg, match) {
     }
 
     bot.sendMessage(msg.chat.id, 'Assalomu Alaykum ' + msg.from.first_name + ' TBozor ga xush kebilsiz!', option);
-
 });
+
+// main menu
+bot.on('message', msg => {
+    const chatId = msg.chat.id;
+
+    bot.sendMessage(msg.chat.id, 'Asosiy Menyu', {
+        reply_markup: {
+            keyboard: [
+                ['🛍 Maxsulotlar'],
+                ['📝 Shartlar', '📞 Aloqa'],
+                ['🛒 Savat', '🇷🇺 Изменить язык']
+            ]
+        }
+    })
+})
